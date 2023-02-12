@@ -1,0 +1,18 @@
+version: "3.5"
+
+services:
+  postgres:
+    container_name: ecom_database
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      PGDATA: /data/postgres
+    volumes:
+      - postgres-db:/data/postgres
+    ports:
+      - "5441:5432"
+
+volumes:
+  postgres-db:
+    driver: local
